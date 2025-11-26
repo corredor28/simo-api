@@ -10,6 +10,10 @@ const TARGET_URL = process.env.TARGET_URL || 'https://simo.cnsc.gov.co';
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('SIMO API Proxy Running');
+});
+
 // Helper to forward requests
 const forwardRequest = async (req, res) => {
     const url = `${TARGET_URL}${req.originalUrl}`;

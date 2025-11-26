@@ -2,7 +2,7 @@
   "name": "simo-api",
   "version": "1.0.0",
   "description": "",
-  "main": "front-vite.config.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,8 +14,6 @@
     "axios": "^1.13.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "http-proxy-middleware": "^3.0.5",
-    "serverless-http": "^4.0.0"
+    "express": "^5.1.0"
   }
 }
