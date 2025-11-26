@@ -66,7 +66,13 @@ endpoints.forEach(endpoint => {
     app.use(endpoint, forwardRequest);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Explicit wrapper for ${TARGET_URL}`);
-});
+// Export the app for serverless use
+module.exports = app;
+
+// Only listen if run directly (local dev)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+        console.log(`Explicit wrapper for ${TARGET_URL}`);
+    });
+}
